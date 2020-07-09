@@ -6,5 +6,7 @@ public class Trainer {
         this.starter = starter;
         this.name = name;
     }
-
+    private static double attack(double x, double y){
+        return x - y;
+    }
 }

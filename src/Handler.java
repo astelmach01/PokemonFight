@@ -1,6 +1,8 @@
+import javax.swing.*;
 import java.util.*;
+import javax.swing.*;
 
-public class Handler {
+public class Handler extends JFrame {
 
 
     static Scanner scan = new Scanner(System.in);
@@ -13,19 +15,37 @@ public class Handler {
         System.out.println("Enter your name: ");
         String name = scan.nextLine();
         Trainer trainer = new Trainer(starter, name);
-
+        System.out.println("Hello " + name + "! You chose: " + starter +" \nPress 1 " +
+                "to enter the arena!");
+        int enter = scan.nextInt();
+        if(enter == 1){
+            enterArena();
+        }
     }
+
+    private static void enterArena(){
+        JFrame frame = new JFrame("Arena");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1980, 1080);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
+    }
+
     private static int scan(){
-        int result = 0;
+        String thing;
+        int result;
         try {
-            result = scan.nextInt();
+            thing = scan.nextLine();
+            result = Integer.parseInt(thing);
+
             if(result < 1 || result > 3){
                 System.out.println("Number is not 1, 2, or 3. Please enter number again:");
                 result = scan();
             }
             
-        } catch (InputMismatchException e) {
-            System.out.println("Invalid entry! Enter number again:");
+        } catch (Exception e) {
+            System.out.println("Please enter a number:");
             result = scan();
         }
         return result;
@@ -44,7 +64,5 @@ public class Handler {
         }
         return "";
     }
-    private static double attack(double x, double y){
-        return x - y;
-    }
+
 }
