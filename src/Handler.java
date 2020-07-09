@@ -1,6 +1,6 @@
 import javax.swing.*;
+import java.awt.*;
 import java.util.*;
-import javax.swing.*;
 
 public class Handler extends JFrame {
 
@@ -24,9 +24,13 @@ public class Handler extends JFrame {
     }
 
     private static void enterArena(){
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.width/1.5;
+        double height = screenSize.height/1.5;
+
         JFrame frame = new JFrame("Arena");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1980, 1080);
+        frame.setSize((int)width, (int) height);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
