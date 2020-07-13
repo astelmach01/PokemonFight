@@ -25,24 +25,20 @@ public class Handler extends JFrame {
             enterArena();
         }
        Bot botOne = new Bot(1);
-        for (int i = 0; i < pokemon.size(); i++) {
-
-        }
 
     }
 
-    private static String chooseStarter(int x){
+    private static Pokemon chooseStarter(int x){
         switch (x){
             case 1:
-                return "Piplup";
+                return new Pokemon("Piplup", 50, 13);
             case 2:
-                return "Chimchar";
+                return new Pokemon("Chimchar", 50, 15);
             case 3:
-                return "Turtwig";
+                return new Pokemon("Turtwig", 50 , 12);
             default:
-
+                return new Pokemon();
         }
-        return "";
     }
 
     private static int scan(){

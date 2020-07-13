@@ -4,10 +4,12 @@ import java.util.Map;
 public class Pokemon {
 
     Map<Integer, String> moves = new HashMap<>();
-    public String type;
-    public double health;
-    public double attack;
+    private String type;
+    private double health;
+    private double attack;
 
+    public Pokemon(){
+    }
     public Pokemon(String x, double y, double z){
         type = x;
         health = y;
