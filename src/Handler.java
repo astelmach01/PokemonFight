@@ -24,12 +24,9 @@ public class Handler extends JFrame {
         if(enter == 1){
             enterArena();
         }
-       Trainer botOne = new Trainer();
-    }
-    private static Trainer createBot(Trainer x, String name){
-        Trainer temp = x;
-        temp.
-        return temp;
+       Bot botOne = new Bot(1);
+
+
     }
 
     private static String chooseStarter(int x){
