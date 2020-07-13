@@ -1,5 +1,9 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Pokemon {
 
+    Map<Integer, String> moves = new HashMap<>();
     public String type;
     public double health;
     public double attack;
@@ -9,7 +13,12 @@ public class Pokemon {
         health = y;
         attack = z;
     }
-
+    public static double attack(double x, double y){
+        return x - y;
+    }
+    public void addMove(int x, String y){
+        moves.put(x, y);
+    }
     public double getHealth() {
         return health;
     }

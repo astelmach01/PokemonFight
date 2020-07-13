@@ -1,12 +1,34 @@
+import java.util.ArrayList;
+
 public class Trainer {
-    protected String starter;
+    ArrayList pokemon;
     private String name;
 
-    public Trainer(String starter, String name){
-        this.starter = starter;
+    public Trainer(){
+
+    }
+    public Trainer(ArrayList pokemon, String name){
+        this.pokemon = pokemon;
         this.name = name;
     }
-    private static double attack(double x, double y){
-        return x - y;
+
+    public ArrayList getPokemon() {
+        return pokemon;
     }
+
+    public void add(String x) {
+        pokemon.add(x);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+
+
 }
