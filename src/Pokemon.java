@@ -4,23 +4,31 @@ import java.util.Map;
 public class Pokemon {
 
     Map<Integer, String> moves = new HashMap<>();
-    private String type;
+    // use dictionary for moves
+    //1, charge
+    private String name;
     private double health;
     private double attack;
+    private Enum type;
 
-    public Pokemon(){
+    public Pokemon() {
     }
-    public Pokemon(String x, double y, double z){
-        type = x;
+
+    public Pokemon(String x, double y, double z, Enum type) {
+        name = x;
         health = y;
         attack = z;
+        this.type = type;
     }
-    public static double attack(double x, double y){
-        return x - y;
+
+    public static double attack(double attack, double health) {
+        return health - attack;
     }
-    public void addMove(int x, String y){
+
+    public void addMove(int x, String y) {
         moves.put(x, y);
     }
+
     public double getHealth() {
         return health;
     }
@@ -37,11 +45,7 @@ public class Pokemon {
         this.attack = attack;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public String getName() {
+        return name;
     }
 }

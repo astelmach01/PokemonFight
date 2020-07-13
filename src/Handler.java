@@ -18,7 +18,7 @@ public class Handler extends JFrame {
         System.out.println("Enter your name: ");
         String name = scan.nextLine();
         Trainer trainer = new Trainer(pokemon, name);
-        System.out.println("Hello " + name + "! You chose: " + pokemon.get(0) +" \nPress 1 " +
+        System.out.println("Hello " + name + "! You chose: " + pokemon.get(0).getName() +" \nPress 1 " +
                 "to enter the arena!");
         int enter = scan.nextInt();
         if(enter == 1){
@@ -29,16 +29,12 @@ public class Handler extends JFrame {
     }
 
     private static Pokemon chooseStarter(int x){
-        switch (x){
-            case 1:
-                return new Pokemon("Piplup", 50, 13);
-            case 2:
-                return new Pokemon("Chimchar", 50, 15);
-            case 3:
-                return new Pokemon("Turtwig", 50 , 12);
-            default:
-                return new Pokemon();
-        }
+        return switch (x) {
+            case 1 -> new Pokemon("Piplup", 50, 13, Types.WATER);
+            case 2 -> new Pokemon("Chimchar", 50, 15, Types.FIRE);
+            case 3 -> new Pokemon("Turtwig", 50, 12, Types.GRASS);
+            default -> new Pokemon();
+        };
     }
 
     private static int scan(){
