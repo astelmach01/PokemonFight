@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Handler extends JFrame {
 
-    static ArrayList<String> pokemon = new ArrayList<>();
+    static ArrayList<Pokemon> pokemon = new ArrayList<>();
 
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
@@ -25,7 +25,9 @@ public class Handler extends JFrame {
             enterArena();
         }
        Bot botOne = new Bot(1);
+        for (int i = 0; i < pokemon.size(); i++) {
 
+        }
 
     }
 
