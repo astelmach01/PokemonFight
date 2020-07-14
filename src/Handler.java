@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
-import java.util.List;
 
 public class Handler extends JFrame {
 
@@ -37,6 +36,8 @@ public class Handler extends JFrame {
         };
     }
 
+
+
     private static int scan(){
         String thing;
         int result;
@@ -61,11 +62,13 @@ public class Handler extends JFrame {
         double width = screenSize.width/1.5;
         double height = screenSize.height/1.5;
 
-        JFrame frame = new JFrame("Arena");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JFrame frame = new Frame();
+       /* frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize((int)width, (int) height);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
+
+        */
     }
 }
